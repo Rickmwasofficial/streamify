@@ -1,0 +1,189 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: coral;
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    display: inline-block;
+    justify-content: space-around;
+    min-width: 30vw;
+}
+.title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100%;
+    height: 80px;
+    background: black;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-left: -17px;
+    position: fixed;
+    flex-wrap: wrap;
+    padding: 5px;
+    z-index: 1;
+    margin-top: -10px;
+}
+.title h1 {
+    margin: auto 0px;
+    padding-left: 40px;
+}
+
+.searchers {
+    width: auto;
+    display: inline-flex;
+    justify-content: space-between;
+    height: 50%;
+    margin: auto 40px;
+}
+.searchers button {
+    height: 110%;
+    font-size: 15px;
+    margin-left: 10px;
+    width: 100px;
+    background: coral;
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+}
+.title input {
+    width: 300px;
+    padding-left: 10px;
+    margin-right: 10px;
+    height: 99%;
+    background: whitesmoke;
+    color: black;
+    border-radius: 10px;
+    margin: auto 0px;
+}
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    width: 100%;
+}
+.left {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-left: -8px;
+    margin-top: 75px;
+    margin-bottom: 10px;
+    background: whitesmoke;
+    color: black;
+    z-index: 1;
+}
+.left button {
+    border: none;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+    color: black;
+    width: 100%;
+    height: auto;
+    margin: auto 0px;
+    text-align: left;
+    padding-left: 40px;
+}
+.right {
+    width: 98%;
+    height: auto;
+    margin: auto 0px;
+    margin-top: 135px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+hr {
+    color: coral;
+}
+.right p {
+    padding-top: 10%;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.movieimage {
+    width: 90%;
+    height: 85%;
+    margin: auto;
+    padding-bottom: 0px;
+    border-radius: 2px;
+}
+
+.moviecard {
+    margin-top: 10px;
+    display: block;
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+    background: black;
+    height: 300px;
+    
+}
+
+.moviecard p {
+    padding-bottom: 10px;
+}
+#moviename {
+    padding: 0px;
+    margin: 0px auto;
+    font-size: 18px;
+}
+
+.description {
+    width: 90%;
+    text-align: justify;
+    color: white;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: coral;
+}
+
+.searchers button:hover {
+    background: #c17c7c;
+}
+.left button:hover {
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.moviecard:hover {
+    width: 210px;
+    height: 310px;
+    box-shadow: 4px 4px 4px 4px grey;
+}
+
+.footer {
+    width: 100%;
+    height: 500px;
+    background: lightslategray;
+    margin-left: -8px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: white;
+    padding-left: 25px;
+    padding-top: 30px;
+}
+
+svg {
+    width: 40px;
+    height: 40px;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+}
+
+footer img, footer svg {
+    padding-right: 30px;
+}
