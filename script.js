@@ -1,4 +1,5 @@
 let movieCards = document.querySelector(".right");
+<<<<<<< HEAD
 let nowPlaying = document.querySelector(".nowplaying");
 let search = document.querySelector("#searched");
 
@@ -17,6 +18,13 @@ const API_NOWPLAYING = 'https://api.themoviedb.org/3/movie/now_playing?language=
 
 returnMovies(APILINK, movieCards);
 returnMovies(API_NOWPLAYING, nowPlaying);
+=======
+let text = `<a href="#" class='moviecard'><div class='movieimage' style="background: url('368175f08c3494fbab5bca96d16a83c5.jpg'); background-size: cover; background-position: center;"></div><br><p id="moviename">The Marvels</p></a>`
+
+for (let i = 0; i < 56; i++) {
+    movieCards.innerHTML += text;
+}
+>>>>>>> aa4e138bd540d0528a8cfb672863c15caf68431b
 
 function returnMovies(url, page) {
     fetch(url).then(res => res.json())
