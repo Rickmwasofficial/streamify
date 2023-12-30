@@ -166,6 +166,7 @@ button:hover {
 
 .moviecard:hover {
     height: 340px;
+    z-index: 1;
     box-shadow: 4px 4px 4px 4px grey;
 }
 
