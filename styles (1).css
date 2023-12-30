@@ -72,7 +72,7 @@ body {
     color: black;
     z-index: 1;
 }
-.left button {
+.left button, .left a {
     border: none;
     margin-bottom: 20px;
     background-color: whitesmoke;
@@ -83,7 +83,7 @@ body {
     text-align: left;
     padding-left: 40px;
 }
-.right {
+.right, .nowplaying {
     width: 98%;
     height: auto;
     margin: auto 0px;
@@ -92,18 +92,25 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
 }
+.nowplaying {
+    margin: 0px;
+}
+
+h2 {
+    padding-left: 20px;
+}
 hr {
     color: coral;
 }
-.right p {
+.right p, .nowplaying p {
     padding-top: 10%;
     padding-left: 40px;
     padding-right: 20px;
 }
 
 .movieimage {
-    width: 90%;
-    height: 85%;
+    width: 95%;
+    height: 75%;
     margin: auto;
     padding-bottom: 0px;
     border-radius: 2px;
@@ -112,17 +119,19 @@ hr {
 .moviecard {
     margin-top: 10px;
     display: block;
-    width: 200px;
+    justify-content: space-around;
+    width: 190px;
     text-align: center;
     padding: 5px;
     border-radius: 10px;
     background: black;
-    height: 300px;
+    height: 330px;
     
 }
 
 .moviecard p {
-    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: -10px;
 }
 #moviename {
     padding: 0px;
@@ -156,8 +165,7 @@ button:hover {
 }
 
 .moviecard:hover {
-    width: 210px;
-    height: 310px;
+    height: 340px;
     box-shadow: 4px 4px 4px 4px grey;
 }
 
