@@ -43,9 +43,16 @@ function returnMovies(url, page) {
         data.results.forEach(element => {
             if (count < 20) {
                 let title = element.name;
-                let imagesrc = IMG_PATH + element.poster_path;
-                let text = `<a href="#" class='moviecard'><div class='movieimage' style="background: url('${imagesrc}'); background-size: cover; background-position: center;"></div><br><p id="moviename">${title}</p></a>`
-                page.innerHTML += text;
+                let title2 = element.title;
+                if (title == undefined) {
+                    let imagesrc = IMG_PATH + element.poster_path;
+                    let text = `<a href="#" class='moviecard'><div class='movieimage' style="background: url('${imagesrc}'); background-size: cover; background-position: center;"></div><br><p id="moviename">${title2}</p></a>`
+                    page.innerHTML += text;
+                } else {
+                    let imagesrc = IMG_PATH + element.poster_path;
+                    let text = `<a href="#" class='moviecard'><div class='movieimage' style="background: url('${imagesrc}'); background-size: cover; background-position: center;"></div><br><p id="moviename">${title}</p></a>`
+                    page.innerHTML += text;
+                }
                 count++;
             }
         });
