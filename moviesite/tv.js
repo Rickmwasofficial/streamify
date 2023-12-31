@@ -46,8 +46,8 @@ function returnMovies(url, page) {
         let count = 0;
         console.log(data.results);
         data.results.forEach(element => {
-            if (count < 18) {
-                let title = element.title;
+            if (count < 20) {
+                let title = element.name;
                 let imagesrc = IMG_PATH + element.poster_path;
                 let text = `<a href="#" class='moviecard'><div class='movieimage' style="background: url('${imagesrc}'); background-size: cover; background-position: center;"></div><br><p id="moviename">${title}</p></a>`
                 page.innerHTML += text;
