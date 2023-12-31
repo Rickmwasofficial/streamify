@@ -80,7 +80,7 @@
     
     .right, .nowplaying, .air, .today {
         width: 100vw;
-        height: 380px;
+        height: 410px;
         display: inline-flex;
         justify-content: space-between;
         margin-bottom: 10px;
