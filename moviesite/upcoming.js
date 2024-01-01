@@ -1,6 +1,7 @@
 let movieCards = document.querySelector(".right");
 let nowPlaying = document.querySelector(".nowplaying");
 let search = document.querySelector("#searched");
+let show = {};
 let pageBtns = document.querySelector(".pages");
 
 let counter = 0;
@@ -35,23 +36,53 @@ returnMovies(API_UpcomingMovie, movieCards);
 function returnMovies(url, page) {
     fetch(url).then(res => res.json())
     .then(function(data) {
-        let count = 0;
         console.log(data.results);
         data.results.forEach(element => {
-            if (count < 20) {
-                let title = element.name;
-                let title2 = element.title;
-                if (title == undefined) {
-                    let imagesrc = IMG_PATH + element.poster_path;
-                    let text = `<a href="#" class='moviecard'><div class='movieimage' style="background: url('${imagesrc}'); background-size: cover; background-position: center;"></div><br><p id="moviename">${title2}</p></a>`
-                    page.innerHTML += text;
-                } else {
-                    let imagesrc = IMG_PATH + element.poster_path;
-                    let text = `<a href="#" class='moviecard'><div class='movieimage' style="background: url('${imagesrc}'); background-size: cover; background-position: center;"></div><br><p id="moviename">${title}</p></a>`
-                    page.innerHTML += text;
-                }
-                count++;
+            let title = element.title;
+            let title2 = element.name;
+            let rating = element.vote_average;
+            let desc = element.overview;
+            let country = element.origin_country;
+            
+            if (title == undefined) {
+                let imagesrc = IMG_PATH + element.poster_path;
+                show[element.id] = [element.name, rating, desc, country, imagesrc];
+                let text = `<a href="details.html" class='moviecard' onclick="showDetails(${element.id});"><div class='movieimage' style="background: url('${imagesrc}'); background-size: cover; background-position: center;"></div><br><p id="moviename">${title2}</p></a>`
+                page.innerHTML += text;
+                
+            } else {
+                let imagesrc = IMG_PATH + element.poster_path;
+                show[element.id] = [element.title, rating, desc, country, imagesrc];
+                let text = `<a href="details.html" class='moviecard' onclick="showDetails(${element.id});"><div class='movieimage' style="background: url('${imagesrc}'); background-size: cover; background-position: center;"></div><br><p id="moviename">${title}</p></a>`
+                page.innerHTML += text;                
             }
         });
     })
+};
+let castNames = [];
+
+function returnCast(url) {
+    let castNames = [];
+    fetch(url).then(res => res.json())
+    .then(function(data) {
+        console.log(data.cast)
+        data.cast.forEach(element => {
+            let castName = element.name;
+            console.log(castNames);
+            if (castNames.length < 10) {
+                castNames.push(castName);
+                console.log(castNames);
+            } else if (castNames == null) {
+                returnCast(`https://api.themoviedb.org/3/movie/${movie}/credits?language=en-US&api_key=7cff4a67582d51235859ea119d30aa42`)
+            }
+        });
+        localStorage.setItem('cast', JSON.stringify(castNames));
+    });
+
+}
+function showDetails(movie) {
+    localStorage.clear();
+    let castLink = `https://api.themoviedb.org/3/tv/${movie}/aggregate_credits?language=en-US&api_key=7cff4a67582d51235859ea119d30aa42`;
+    returnCast(castLink)
+    localStorage.setItem('show', JSON.stringify(show[movie]));
 };
