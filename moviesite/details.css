@@ -155,6 +155,10 @@
     }
 }
 
+.moviecard {
+    box-shadow: 2px 2px 2px 2px white;
+}
+
 @media screen and (min-width: 1000px) {
     body {
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
